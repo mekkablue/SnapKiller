@@ -1,6 +1,11 @@
 # SnapKiller
 
-Glyphs.app Plug-in: reduces amount of magnetic snapping in edit view in Glyphs 2.5
+This is a plugin for the [Glyphs font editor](http://glyphsapp.com/) by Georg Seifert.
+It reduces the amount of magnetic snapping in Edit view in Glyphs 2.5. After installation, it will add the menu item *Edit > Kill Snapping* (de: *Bearbeiten > Einrasten unterdrücken*).
+
+You can set a keyboard shortcut in System Preferences.
+
+To install, simply double click the `.glyphsPlugin`, follow the instructions on screen, and restart the application when you are finished.
 
 ### License
 
