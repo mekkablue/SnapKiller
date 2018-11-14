@@ -20,6 +20,7 @@ class SnapKiller(GeneralPlugin):
 		self.name = Glyphs.localize({
 			'en': u'Kill Snapping', 
 			'de': u'Einrasten unterdrücken',
+			'es': u'Evitar magnetismo entre los nodos',
 		})
 	
 	def start(self):
