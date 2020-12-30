@@ -11,11 +11,14 @@
 #
 ###########################################################################################################
 
+from __future__ import division, print_function, unicode_literals
 import objc
 from GlyphsApp import *
 from GlyphsApp.plugins import *
 
 class SnapKiller(GeneralPlugin):
+	
+	@objc.python_method
 	def settings(self):
 		self.name = Glyphs.localize({
 			'en': u'Kill Snapping', 
@@ -23,6 +26,7 @@ class SnapKiller(GeneralPlugin):
 			'es': u'Evitar magnetismo entre los nodos',
 		})
 	
+	@objc.python_method
 	def start(self):
 		self.isKilling = False
 		self.hasNotification = False
@@ -34,6 +38,7 @@ class SnapKiller(GeneralPlugin):
 		
 		self.setSnapKillState(self.getSnapKillState())
 	
+	@objc.python_method
 	def __del__(self):
 		try:
 			if self.hasNotification:
@@ -42,14 +47,17 @@ class SnapKiller(GeneralPlugin):
 		except:
 			# exit gracefully, but do report:
 			import traceback
-			print traceback.format_exc()
+			print( traceback.format_exc() )
 	
+	@objc.python_method
 	def toggleSnapKill(self, sender):
 		self.setSnapKillState(not self.getSnapKillState())
 	
+	@objc.python_method
 	def getSnapKillState(self):
 		return Glyphs.boolDefaults["com.mekkablue.SnapKiller.state"]
 	
+	@objc.python_method
 	def setSnapKillState(self, state):
 		Glyphs.boolDefaults["com.mekkablue.SnapKiller.state"] = bool(state)
 		if not state:
@@ -64,6 +72,7 @@ class SnapKiller(GeneralPlugin):
 		currentState = ONSTATE if state else OFFSTATE
 		self.menuItem.setState_(currentState)
 	
+	@objc.python_method
 	def killSnaps(self, sender, blackAndScale=None):
 		# only kill snaps when a document and a tab is open and a glyph layer is open for editing:
 		if Glyphs.font and Glyphs.font.currentTab and Glyphs.font.currentTab.activeLayer():
@@ -74,6 +83,7 @@ class SnapKiller(GeneralPlugin):
 				tool.cleanSnappers()
 				self.isKilling = False
 	
+	@objc.python_method
 	def __file__(self):
 		"""Please leave this method unchanged"""
 		return __file__
