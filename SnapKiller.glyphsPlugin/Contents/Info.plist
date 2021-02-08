@@ -26,13 +26,13 @@
 	<string>SnapKiller</string>
 	<key>PyMainFileNames</key>
 	<array>
-		<string>plugin.py</string>
+		<string>../MacOS/main.py</string>
 	</array>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/SnapKiller/master/SnapKiller.glyphsPlugin/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/SnapKiller</string>
 	<key>productReleaseNotes</key>
-	<string>Fix ResourcePath error.</string>
+	<string>update binary files for Glyphs3</string>
 </dict>
 </plist>
